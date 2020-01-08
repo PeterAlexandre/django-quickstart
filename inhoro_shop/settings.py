@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'inhoro_shop.core'
+    'inhoro_shop.core.apps.CoreConfig'
 ]
 
 MIDDLEWARE = [
@@ -107,7 +107,7 @@ LANGUAGES = [
     ('en', 'English')
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
