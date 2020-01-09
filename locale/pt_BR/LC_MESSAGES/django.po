@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-09 21:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: inhoro_shop/core/apps.py:6
+msgid "Core"
+msgstr "Base"
+
+#: inhoro_shop/core/models.py:6
+msgid "Created at"
+msgstr "Criado em"
+
+#: inhoro_shop/core/models.py:7
+msgid "Updated at"
+msgstr "Atualizado em"
+
+#: inhoro_shop/core/models.py:14 inhoro_shop/core/models.py:64
+msgid "Name"
+msgstr "Nome"
+
+#: inhoro_shop/core/models.py:15
+msgid "Nickname"
+msgstr "Apelido"
+
+#: inhoro_shop/core/models.py:16
+msgid "Document"
+msgstr "Documento"
+
+#: inhoro_shop/core/models.py:17
+msgid "Phone"
+msgstr "Telefone"
+
+#: inhoro_shop/core/models.py:18
+msgid "Email"
+msgstr "E-mail"
+
+#: inhoro_shop/core/models.py:23
+msgid "State registration"
+msgstr "Inscrição estadual"
+
+#: inhoro_shop/core/models.py:24
+msgid "Municipal registration"
+msgstr "Inscrição municipal"
+
+#: inhoro_shop/core/models.py:27
+msgid "Legal person"
+msgstr "Pessoa jurídica"
+
+#: inhoro_shop/core/models.py:28
+msgid "Legal people"
+msgstr "Pessoas jurídicas"
+
+#: inhoro_shop/core/models.py:35
+msgid "Male"
+msgstr "Masculino"
+
+#: inhoro_shop/core/models.py:35
+msgid "Female"
+msgstr "Feminino"
+
+#: inhoro_shop/core/models.py:35
+msgid "Other"
+msgstr "Outro"
+
+#: inhoro_shop/core/models.py:38
+msgid "Birthday"
+msgstr "Nascimento"
+
+#: inhoro_shop/core/models.py:39
+msgid "Gender"
+msgstr "Gênero"
+
+#: inhoro_shop/core/models.py:40
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: inhoro_shop/core/models.py:41
+msgid "Naturalness"
+msgstr "Naturalidade"
+
+#: inhoro_shop/core/models.py:44
+msgid "Natural person"
+msgstr "Pessoa física"
+
+#: inhoro_shop/core/models.py:45
+msgid "Natural people"
+msgstr "Pessoas físicas"
+<<<<<<< HEAD
+
+#: inhoro_shop/core/models.py:53
+msgid "Street"
+msgstr "Rua"
+
+#: inhoro_shop/core/models.py:54
+msgid "City"
+msgstr "Cidade"
+
+#: inhoro_shop/core/models.py:55
+msgid "Number"
+msgstr "Número"
+
+#: inhoro_shop/core/models.py:56
+msgid "Complement"
+msgstr "Complemento"
+
+#: inhoro_shop/core/models.py:57
+msgid "Tags"
+msgstr "Rótulo"
