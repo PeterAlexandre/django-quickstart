@@ -102,6 +102,7 @@ msgstr "Pessoa física"
 msgid "Natural people"
 msgstr "Pessoas físicas"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 #: inhoro_shop/core/models.py:53
 msgid "Street"
@@ -122,3 +123,5 @@ msgstr "Complemento"
 #: inhoro_shop/core/models.py:57
 msgid "Tags"
 msgstr "Rótulo"
+=======
+>>>>>>> 660fdc0a1e589f0cca0e0e7ec055495f44acce81
