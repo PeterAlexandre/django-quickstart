@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Natural Person</title>
+</head>
+<body>
+    <div>
+        <h1>See the natural people</h1>
+    </div>
+    <div>
+        <ul>
+            {% for naturalperson in naturalperson_list %}
+                <li>{{ naturalperson.name }}</li>
+            {% endfor %}            
+        </ul>
+    </div>
+</body>
+</html>
+
+
