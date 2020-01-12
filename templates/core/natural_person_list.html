@@ -1,0 +1,11 @@
+{% extends 'base_site.html' %}
+
+{% block html_title %}Natural person{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for naturalperson in naturalperson_list %}
+            <li>{{ naturalperson.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

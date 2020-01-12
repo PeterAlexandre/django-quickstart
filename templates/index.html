@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inhoro store</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-</head>
-<body>
+{% extends 'base_site.html' %}
+
+{% block html_title %}Home{% endblock %}
+
+{% block content %}
     <div>
         <h1>Welcome to inhoro store!</h1>
     </div>
     <div>
         <a href="{% url 'core:natural_person_list' %}">List of natural person!</a>
     </div>
-</body>
-</html>
+{% endblock %}
