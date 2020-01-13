@@ -4,8 +4,8 @@
 
 {% block content %}
     <ul>
-        {% for naturalperson in naturalperson_list %}
-            <li>{{ naturalperson.name }}</li>
+        {% for natural_person in natural_person_list %}
+            <li><a href="{% url 'core:natural_person' pk=natural_person.pk %}">{{ natural_person.name }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

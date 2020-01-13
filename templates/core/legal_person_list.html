@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Natural Person</title>
-</head>
-<body>
-    <div>
-        <h1>See the natural people</h1>
-    </div>
-    <div>
-        <ul>
-            {% for naturalperson in naturalperson_list %}
-                <li>{{ naturalperson.name }}</li>
-            {% endfor %}            
-        </ul>
-    </div>
-</body>
-</html>
+{% extends 'base_site.html' %}
 
+{% block html_title %}Legal person{% endblock %}
 
+{% block content %}
+    <ul>
+        {% for legal_person in legal_person_list %}
+            <li><a href="{% url 'core:legal_person' pk=legal_person.pk %}">{{ legal_person.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

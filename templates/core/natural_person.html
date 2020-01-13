@@ -1,0 +1,8 @@
+{% extends 'base_site.html' %}
+
+{% block html_title %}Natural person{% endblock %}
+
+{% block content %}
+    <div><h1>{{ natural_person.name }}</h1></div>
+    <div><h2>{{ natural_person.phone }} / {{natural_person.email}}</h2></div>
+{% endblock %}

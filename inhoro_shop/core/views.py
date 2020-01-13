@@ -13,19 +13,23 @@ class IndexView(TemplateView):
 class LegalPersonDetailView(DetailView):
     model = LegalPerson
     template_name = 'core/legal_person.html'
+    context_object_name = 'legal_person'
 
 
 class LegalPersonListView(ListView):
     template_name = 'core/legal_person_list.html'
     model = LegalPerson
+    context_object_name = 'legal_person_list'
 
 
 # NaturalPerson
 class NaturalPersonDetailView(DetailView):
     model = NaturalPerson
     template_name = 'core/natural_person.html'
+    context_object_name = 'natural_person'
 
 
 class NaturalPersonListView(ListView):
     template_name = 'core/natural_person_list.html'
     model = NaturalPerson
+    context_object_name = 'natural_person_list'
