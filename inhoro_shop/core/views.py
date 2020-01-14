@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 
 from inhoro_shop.core.models import NaturalPerson, LegalPerson
