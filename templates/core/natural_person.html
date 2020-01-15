@@ -5,4 +5,5 @@
 {% block content %}
     <div><h1>{{ natural_person.name }}</h1></div>
     <div><h2>{{ natural_person.phone }} / {{natural_person.email}}</h2></div>
+    <div><a href="{% url 'core:natural_person_update' pk=natural_person.pk %}">Edit person</a></div>
 {% endblock %}

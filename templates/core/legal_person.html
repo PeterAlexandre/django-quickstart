@@ -5,4 +5,5 @@
 {% block content %}
     <div><h1>{{ legal_person.name }}</h1></div>
     <div><h2>{{ legal_person.phone }} / {{legal_person.email}}</h2></div>
+    <div><a href="{% url 'core:legal_person_update' pk=legal_person.pk %}">Edit person</a></div>
 {% endblock %}
