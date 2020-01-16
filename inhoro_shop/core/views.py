@@ -1,5 +1,5 @@
 from django.urls import reverse
-from django.views.generic import TemplateView, ListView, DetailView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView
 
 from inhoro_shop.core.forms import NaturalPersonForm, LegalPersonForm
 from inhoro_shop.core.models import NaturalPerson, LegalPerson
@@ -11,6 +11,15 @@ class IndexView(TemplateView):
 
 
 # LegalPerson
+class LegalPersonCreateView(CreateView):
+    model = LegalPerson
+    form_class = LegalPersonForm
+    template_name = 'core/legal_person_create.html'
+
+    def get_success_url(self):
+        return reverse('core:legal_person_list')
+
+
 class LegalPersonUpdateView(UpdateView):
     model = LegalPerson
     form_class = LegalPersonForm
@@ -33,6 +42,15 @@ class LegalPersonListView(ListView):
 
 
 # NaturalPerson
+class NaturalPersonCreateView(CreateView):
+    model = NaturalPerson
+    form_class = LegalPersonForm
+    template_name = 'core:natural_person_create.html'
+
+    def get_success_url(self):
+        return reverse('core:natural_person_list')
+
+
 class NaturalPersonUpdateView(UpdateView):
     model = NaturalPerson
     form_class = NaturalPersonForm
