@@ -2,10 +2,60 @@
 
 {% block html_title %}Legal person{% endblock %}
 
+{% block css %}
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+
+        button {
+            margin: 25px 10px 25px;
+            float: right;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 15px 10px auto;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-    <ul>
-        {% for legal_person in legal_person_list %}
-            <li><a href="{% url 'core:legal_person' pk=legal_person.pk %}">{{ legal_person.name }}</a></li>
-        {% endfor %}
-    </ul>
+    {% url 'core:legal_person_create' as create_url %}
+    <div>
+        <h1>Legal person</h1>
+        <button type="button" onclick="location.href='{{ create_url }}'; ">Add person</button>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Document</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            {% for legal_person in legal_person_list %}
+                <tr>
+
+                    <td><a href="{% url 'core:legal_person' pk=legal_person.pk %}">{{ legal_person.name }}</a></td>
+                    <td>{{ legal_person.document }}</td>
+                    <td>{{ legal_person.phone }}</td>
+                    <td>{{ legal_person.email }}</td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}

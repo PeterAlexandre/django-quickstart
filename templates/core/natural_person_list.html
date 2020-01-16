@@ -2,10 +2,60 @@
 
 {% block html_title %}Natural person{% endblock %}
 
+{% block css %}
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+
+        button {
+            margin: 25px 10px 25px;
+            float: right;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 15px 10px auto;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-    <ul>
-        {% for natural_person in natural_person_list %}
-            <li><a href="{% url 'core:natural_person' pk=natural_person.pk %}">{{ natural_person.name }}</a></li>
-        {% endfor %}
-    </ul>
+    {% url 'core:natural_person_create' as create_url %}
+    <div>
+        <h1>Natural person</h1>
+        <button type="button" onclick="location.href='{{ create_url }}'; ">Add person</button>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Document</th>
+                <th>Birthday</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            {% for natural_person in natural_person_list %}
+                <tr>
+                    <td><a href="{% url 'core:natural_person' pk=natural_person.pk %}">{{ natural_person.name }}</a></td>
+                    <td>{{ natural_person.document }}</td>
+                    <td>{{ natural_person.birthday }}</td>
+                    <td>{{ natural_person.phone }}</td>
+                    <td>{{ natural_person.email }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
