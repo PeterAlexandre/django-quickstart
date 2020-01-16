@@ -7,5 +7,10 @@
     <div><h2>{{ natural_person.phone }} / {{natural_person.email}}</h2></div>
 
     {% url 'core:natural_person_update' pk=natural_person.pk as edit_url %}
-    <div><button type="button" onclick="location.href='{{ edit_url }}'; ">Edit person</button></div>
+    {% url 'core:natural_person_delete' pk=natural_person.pk as delete_url %}
+
+    <div>
+        <button type="button" onclick="location.href='{{ edit_url }}'; ">Edit person</button>
+        <button type="button" onclick="location.href='{{ delete_url }}';">Delete person</button>
+    </div>
 {% endblock %}

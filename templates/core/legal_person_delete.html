@@ -1,0 +1,13 @@
+{% extends 'base_site.html' %}
+
+{% block html_title %}Delete Legal Person{% endblock %}
+
+{% block content %}
+    <form method="POST">{% csrf_token %}
+        {% url 'core:legal_person' pk=legal_person.pk as cancel_url %}
+
+        <p>Are you sure you want to delete "{{ legal_person.name }}"?</p>
+        <button>Confirm</button>
+        <button type="button" onclick="location.href='{{ cancel_url }}';">Cancel</button>
+    </form>
+{% endblock %}
