@@ -8,12 +8,12 @@ from inhoro_shop.core.models import NaturalPerson, LegalPerson
 
 
 # General views
-class IndexView(TemplateView):
+class IndexView(LoginRequiredMixin, TemplateView):
     template_name = 'index.html'
 
 
 # User or authentication
-class LoginView(LoginRequiredMixin, DJLoginView):
+class LoginView(DJLoginView):
     template_name = 'login.html'
     redirect_authenticated_user = True
 
