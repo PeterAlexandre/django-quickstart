@@ -1,3 +1,5 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView as DJLoginView
 from django.urls import reverse, reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView, DeleteView
 
@@ -10,8 +12,21 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
+# User or authentication
+class LoginView(LoginRequiredMixin, DJLoginView):
+    template_name = 'login.html'
+    redirect_authenticated_user = True
+
+    def get_redirect_url(self):
+        url = super().get_redirect_url()
+        if self.request.path == url:
+            print('home')
+            return reverse('home')
+        return url
+
+
 # LegalPerson
-class LegalPersonCreateView(CreateView):
+class LegalPersonCreateView(LoginRequiredMixin, CreateView):
     model = LegalPerson
     form_class = LegalPersonForm
     template_name = 'core/legal_person_create.html'
@@ -20,7 +35,7 @@ class LegalPersonCreateView(CreateView):
         return reverse('core:legal_person_list')
 
 
-class LegalPersonUpdateView(UpdateView):
+class LegalPersonUpdateView(LoginRequiredMixin, UpdateView):
     model = LegalPerson
     form_class = LegalPersonForm
     template_name = 'core/legal_person_update.html'
@@ -29,27 +44,27 @@ class LegalPersonUpdateView(UpdateView):
         return reverse('core:legal_person', kwargs={"pk": self.object.pk})
 
 
-class LegalPersonDetailView(DetailView):
+class LegalPersonDetailView(LoginRequiredMixin, DetailView):
     model = LegalPerson
     template_name = 'core/legal_person.html'
     context_object_name = 'legal_person'
 
 
-class LegalPersonDeleteView(DeleteView):
+class LegalPersonDeleteView(LoginRequiredMixin, DeleteView):
     model = LegalPerson
     template_name = 'core/legal_person_delete.html'
     context_object_name = 'legal_person'
     success_url = reverse_lazy('core:legal_person_list')
 
 
-class LegalPersonListView(ListView):
+class LegalPersonListView(LoginRequiredMixin, ListView):
     model = LegalPerson
     template_name = 'core/legal_person_list.html'
     context_object_name = 'legal_person_list'
 
 
 # NaturalPerson
-class NaturalPersonCreateView(CreateView):
+class NaturalPersonCreateView(LoginRequiredMixin, CreateView):
     model = NaturalPerson
     form_class = NaturalPersonForm
     template_name = 'core/natural_person_create.html'
@@ -58,7 +73,7 @@ class NaturalPersonCreateView(CreateView):
         return reverse('core:natural_person_list')
 
 
-class NaturalPersonUpdateView(UpdateView):
+class NaturalPersonUpdateView(LoginRequiredMixin, UpdateView):
     model = NaturalPerson
     form_class = NaturalPersonForm
     template_name = 'core/natural_person_update.html'
@@ -67,20 +82,20 @@ class NaturalPersonUpdateView(UpdateView):
         return reverse('core:natural_person', kwargs={"pk": self.object.pk})
 
 
-class NaturalPersonDeleteView(DeleteView):
+class NaturalPersonDeleteView(LoginRequiredMixin, DeleteView):
     model = NaturalPerson
     template_name = 'core/natural_person_delete.html'
     context_object_name = 'natural_person'
     success_url = reverse_lazy('core:natural_person_list')
 
 
-class NaturalPersonDetailView(DetailView):
+class NaturalPersonDetailView(LoginRequiredMixin, DetailView):
     model = NaturalPerson
     template_name = 'core/natural_person.html'
     context_object_name = 'natural_person'
 
 
-class NaturalPersonListView(ListView):
+class NaturalPersonListView(LoginRequiredMixin, ListView):
     model = NaturalPerson
     template_name = 'core/natural_person_list.html'
     context_object_name = 'natural_person_list'
