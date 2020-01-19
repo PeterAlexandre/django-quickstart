@@ -1,13 +1,14 @@
 {% extends 'base_site.html' %}
+{% load i18n %}
 
-{% block html_title %}Delete Legal Person{% endblock %}
+{% block html_title %}{% trans "Delete Legal Person" %}{% endblock %}
 
 {% block content %}
     <form method="POST">{% csrf_token %}
         {% url 'core:legal_person' pk=legal_person.pk as cancel_url %}
 
-        <p>Are you sure you want to delete "{{ legal_person.name }}"?</p>
-        <button>Confirm</button>
-        <button type="button" onclick="location.href='{{ cancel_url }}';">Cancel</button>
+        <p>{% blocktrans name=legal_person.name %}Are you sure you want to delete "{{ name }}"?{% endblocktrans %}</p>
+        <button>{% trans "Confirm" %}</button>
+        <button type="button" onclick="location.href='{{ cancel_url }}';">{% trans "Cancel" %}</button>
     </form>
 {% endblock %}

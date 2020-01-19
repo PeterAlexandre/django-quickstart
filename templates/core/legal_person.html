@@ -1,6 +1,7 @@
 {% extends 'base_site.html' %}
+{% load i18n %}
 
-{% block html_title %}Legal person{% endblock %}
+{% block html_title %}{% trans "Legal person" %}{% endblock %}
 
 {% block content %}
     <div><h1>{{ legal_person.name }}</h1></div>
@@ -9,7 +10,7 @@
     {% url 'core:legal_person_update' pk=legal_person.pk as edit_url %}
     {% url 'core:legal_person_delete' pk=legal_person.pk as delete_url %}
     <div>
-        <button type="button" onclick="location.href='{{ edit_url }}';">Edit person</button>
-        <button type="button" onclick="location.href='{{ delete_url }}';">Delete person</button>
+        <button type="button" onclick="location.href='{{ edit_url }}';">{% trans "Edit person" %}</button>
+        <button type="button" onclick="location.href='{{ delete_url }}';">{% trans "Delete person" %}</button>
     </div>
 {% endblock %}

@@ -1,21 +1,22 @@
 {% extends 'base_site.html' %}
+{% load i18n %}
 
-{% block html_title %}Home{% endblock %}
+{% block html_title %}{% trans "Home" %}{% endblock %}
 
 {% block content %}
     <div>
-        <h1>Welcome to inhoro store!</h1>
+        <h1>{% trans "Welcome to inhoro store!" %}</h1>
     </div>
     <div>
-        <h3>Click here to access the natural people list</h3>
+        <h3>{% trans "Click here to access the natural people list" %}</h3>
     </div>
     <div>
-        <a href="{% url 'core:natural_person_list' %}">List of natural person!</a>
+        <a href="{% url 'core:natural_person_list' %}">{% trans "List of natural person!" %}</a>
     </div>
     <div>
-        <h3>Click here to access the legal people list</h3>
+        <h3>{% trans "Click here to access the legal people list" %}</h3>
     </div>
     <div>
-        <a href="{% url 'core:legal_person_list' %}">List of legal person!</a>
+        <a href="{% url 'core:legal_person_list' %}">{% trans "List of legal person!" %}</a>
     </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 {% extends 'base_site.html' %}
+{% load i18n %}
 
-{% block html_title %}Legal person{% endblock %}
+{% block html_title %}{% trans "Legal person" %}{% endblock %}
 
 {% block css %}
     <style>
@@ -35,16 +36,16 @@
 {% block content %}
     {% url 'core:legal_person_create' as create_url %}
     <div>
-        <h1>Legal person</h1>
-        <button type="button" onclick="location.href='{{ create_url }}'; ">Add person</button>
+        <h1>{% trans "Legal person" %}</h1>
+        <button type="button" onclick="location.href='{{ create_url }}'; ">{% trans "Add person" %}</button>
     </div>
     <div>
         <table>
             <tr>
-                <th>Name</th>
-                <th>Document</th>
-                <th>Phone</th>
-                <th>Email</th>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Document" %}</th>
+                <th>{% trans "Phone" %}</th>
+                <th>{% trans "Email" %}</th>
             </tr>
             {% for legal_person in legal_person_list %}
                 <tr>

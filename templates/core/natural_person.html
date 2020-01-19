@@ -1,6 +1,7 @@
 {% extends 'base_site.html' %}
+{% load i18n %}
 
-{% block html_title %}Natural person{% endblock %}
+{% block html_title %}{% trans "Natural person" %}{% endblock %}
 
 {% block content %}
     <div><h1>{{ natural_person.name }}</h1></div>
@@ -10,7 +11,7 @@
     {% url 'core:natural_person_delete' pk=natural_person.pk as delete_url %}
 
     <div>
-        <button type="button" onclick="location.href='{{ edit_url }}'; ">Edit person</button>
-        <button type="button" onclick="location.href='{{ delete_url }}';">Delete person</button>
+        <button type="button" onclick="location.href='{{ edit_url }}';">{% trans "Edit person" %}</button>
+        <button type="button" onclick="location.href='{{ delete_url }}';">{% trans "Delete person" %}</button>
     </div>
 {% endblock %}
