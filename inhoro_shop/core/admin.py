@@ -28,5 +28,4 @@ class NaturalPersonAdmin(admin.ModelAdmin):
     list_display = ('document', 'name', 'phone', 'email')
 
 # Tips
-# 1 - Fields are the model data that appeared when creating or changing an 
-# instance.
+# 1 - Fields are the model data that appeared when creating or changing an instance.

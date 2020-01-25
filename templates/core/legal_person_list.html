@@ -56,6 +56,14 @@
                     <td>{{ legal_person.email }}</td>
 
                 </tr>
+            {% empty %}
+                <tr>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <p>{% trans "Sorry, no legal person in the list." %}</p>
             {% endfor %}
         </table>
     </div>

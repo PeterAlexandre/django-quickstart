@@ -52,7 +52,7 @@ class LegalPersonViewTest(BaseTestCase):
     def test_anonymous_user_delete(self):
         self.not_anonymous(reverse('core:legal_person_update', kwargs={'pk': mommy.make(LegalPerson).pk}))()
 
-    # views test
+    # view tests
     def test_create(self):
         url = reverse('core:legal_person_create')
         self.client.force_login(self.user)
@@ -124,8 +124,16 @@ class LegalPersonViewTest(BaseTestCase):
             LegalPerson.objects.get(document=lp.document)
         self.assertRedirects(response, reverse('core:legal_person_list'), status_code=302)
 
+    # error tests
     def test_detail_404(self):
         self.client.force_login(self.user)
         url = reverse('core:legal_person', kwargs={'pk': 1})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
+
+    def test_empty_list(self):
+        self.client.force_login(self.user)
+        url = reverse('core:legal_person_list')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertInHTML('Sorry, no legal person in the list.', response.content.decode('utf8'))
