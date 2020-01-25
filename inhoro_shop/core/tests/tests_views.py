@@ -35,10 +35,24 @@ class IndexViewTest(BaseTestCase):
 
 
 class LegalPersonViewTest(BaseTestCase):
-    # Legal person create view tests
+    # Anonymous tests
     def test_anonymous_user_create(self):
         self.not_anonymous(reverse('core:legal_person_create'))()
 
+    def test_anonymous_user_detail(self):
+        self.not_anonymous(reverse('core:legal_person', kwargs={'pk': mommy.make(LegalPerson).pk}))()
+
+    def test_anonymous_user_list(self):
+        mommy.make(LegalPerson, _quantity=3)
+        self.not_anonymous(reverse('core:legal_person_list'))()
+
+    def test_anonymous_user_update(self):
+        self.not_anonymous(reverse('core:legal_person_update', kwargs={'pk': mommy.make(LegalPerson).pk}))()
+
+    def test_anonymous_user_delete(self):
+        self.not_anonymous(reverse('core:legal_person_update', kwargs={'pk': mommy.make(LegalPerson).pk}))()
+
+    # views test
     def test_create(self):
         url = reverse('core:legal_person_create')
         self.client.force_login(self.user)
@@ -52,7 +66,7 @@ class LegalPersonViewTest(BaseTestCase):
             'municipal_registration': 'Maceió'
         }
         response = self.client.post(url, data)
-        self.assertRedirects(response, reverse('core:legal_person_list'))
+        self.assertRedirects(response, reverse('core:legal_person_list'), status_code=302)
         try:
             person = LegalPerson.objects.get(document=data['document'])
         except LegalPerson.DoesNotExist:
@@ -60,10 +74,6 @@ class LegalPersonViewTest(BaseTestCase):
         except LegalPerson.MultipleObjectsReturned:
             self.fail('Legal person is duplicated')
         self.assertDictEqual(data, model_to_dict(person, fields=data.keys()))
-
-    # Legal person detail_view tests
-    def test_anonymous_user_detail(self):
-        self.not_anonymous(reverse('core:legal_person', kwargs={'pk': mommy.make(LegalPerson).pk}))()
 
     def test_detail(self):
         self.client.force_login(self.user)
@@ -73,17 +83,6 @@ class LegalPersonViewTest(BaseTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertInHTML(lp.name, response.content.decode('utf8'))
 
-    def test_detail_404(self):
-        self.client.force_login(self.user)
-        url = reverse('core:legal_person', kwargs={'pk': 1})
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 404)
-
-    # Legal person list_view tests
-    def test_anonymous_user_list(self):
-        mommy.make(LegalPerson, _quantity=3)
-        self.not_anonymous(reverse('core:legal_person_list'))()
-
     def test_list(self):
         self.client.force_login(self.user)
         mommy.make(LegalPerson, _quantity=3)
@@ -92,10 +91,6 @@ class LegalPersonViewTest(BaseTestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertInHTML(lp['name'], response.content.decode('utf8'))
-
-    # Legal person update_view tests
-    def test_anonymous_user_update(self):
-        self.not_anonymous(reverse('core:legal_person_update', kwargs={'pk': mommy.make(LegalPerson).pk}))()
 
     def test_update(self):
         lp = mommy.make(LegalPerson).pk
@@ -119,3 +114,18 @@ class LegalPersonViewTest(BaseTestCase):
         except LegalPerson.MultipleObjectsReturned:
             self.fail('Legal person is duplicated')
         self.assertDictEqual(data, model_to_dict(person, fields=data.keys()))
+
+    def test_delete(self):
+        lp = mommy.make(LegalPerson)
+        url = reverse('core:legal_person_delete', kwargs={'pk': lp.pk})
+        self.client.force_login(self.user)
+        response = self.client.post(url)
+        with self.assertRaises(LegalPerson.DoesNotExist):
+            LegalPerson.objects.get(document=lp.document)
+        self.assertRedirects(response, reverse('core:legal_person_list'), status_code=302)
+
+    def test_detail_404(self):
+        self.client.force_login(self.user)
+        url = reverse('core:legal_person', kwargs={'pk': 1})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
