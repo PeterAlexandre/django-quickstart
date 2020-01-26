@@ -7,7 +7,7 @@
     <form method="POST">{% csrf_token %}
         {% url 'core:natural_person' pk=natural_person.pk as cancel_url %}
 
-        <p>{% blocktrans name=natural_person.name %}Are you sure you want to delete "{{ name }}"?{% endblocktrans %}</p>
+        <p>{% blocktrans with name=natural_person.name %}Are you sure you want to delete "{{ name }}"?{% endblocktrans %}</p>
         <button>{% trans "Confirm" %}</button>
         <button type="button" onclick="location.href='{{ cancel_url }}';">{% trans "Cancel" %}</button>
     </form>
