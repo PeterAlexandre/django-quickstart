@@ -56,6 +56,14 @@
                     <td>{{ natural_person.phone }}</td>
                     <td>{{ natural_person.email }}</td>
                 </tr>
+                {% empty %}
+                <tr>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <p>{% trans "Sorry, no natural person in the list." %}</p>
             {% endfor %}
         </table>
     </div>
