@@ -9,5 +9,6 @@ urlpatterns = [
     path('', IndexView.as_view(), name='home'),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('core/', include('inhoro_shop.core.urls'))
+    path('api/', include('inhoro_shop.api.urls')),
+    path('core/', include('inhoro_shop.core.urls')),
 ]
