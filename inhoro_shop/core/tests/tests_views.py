@@ -229,7 +229,7 @@ class NaturalPersonViewTest(BaseTestCase):
             NaturalPerson.objects.get(document=np.document)
         self.assertRedirects(response, reverse('core:natural_person_list'), status_code=302)
 
-        # error tests
+    # error tests
     def test_detail_404(self):
         self.client.force_login(self.user)
         url = reverse('core:natural_person', kwargs={'pk': 1})
