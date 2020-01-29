@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-19 22:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: inhoro_shop/core/apps.py:7
+msgid "Core"
+msgstr "Núcleo"
+
+#: inhoro_shop/core/models.py:6
+msgid "Created at"
+msgstr "Criado em"
+
+#: inhoro_shop/core/models.py:7
+msgid "Updated at"
+msgstr "Atualizado em"
+
+#: inhoro_shop/core/models.py:14 inhoro_shop/core/models.py:73
+#: templates/core/legal_person_list.html:45
+#: templates/core/natural_person_list.html:45
+msgid "Name"
+msgstr "Nome"
+
+#: inhoro_shop/core/models.py:15
+msgid "Nickname"
+msgstr "Apelido"
+
+#: inhoro_shop/core/models.py:16 templates/core/legal_person_list.html:46
+#: templates/core/natural_person_list.html:46
+msgid "Document"
+msgstr "Documento"
+
+#: inhoro_shop/core/models.py:17 templates/core/legal_person_list.html:47
+#: templates/core/natural_person_list.html:48
+msgid "Phone"
+msgstr "Telefone"
+
+#: inhoro_shop/core/models.py:18 templates/core/legal_person_list.html:48
+#: templates/core/natural_person_list.html:49
+msgid "Email"
+msgstr "E-mail"
+
+#: inhoro_shop/core/models.py:26
+msgid "State registration"
+msgstr "Registro estadual"
+
+#: inhoro_shop/core/models.py:27
+msgid "Municipal registration"
+msgstr "Registro municipal"
+
+#: inhoro_shop/core/models.py:30 templates/core/legal_person.html:4
+#: templates/core/legal_person_list.html:4
+#: templates/core/legal_person_list.html:39
+msgid "Legal person"
+msgstr "Pessoa jurídica"
+
+#: inhoro_shop/core/models.py:31
+msgid "Legal people"
+msgstr "Pessoas jurídicas"
+
+#: inhoro_shop/core/models.py:35
+msgid "Male"
+msgstr "Masculino"
+
+#: inhoro_shop/core/models.py:35
+msgid "Female"
+msgstr "Feminino"
+
+#: inhoro_shop/core/models.py:35
+msgid "Other"
+msgstr "Outro"
+
+#: inhoro_shop/core/models.py:38 templates/core/natural_person_list.html:47
+msgid "Birthday"
+msgstr "Data de nascimento"
+
+#: inhoro_shop/core/models.py:39
+msgid "Gender"
+msgstr "Gênero"
+
+#: inhoro_shop/core/models.py:40
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: inhoro_shop/core/models.py:41
+msgid "Naturalness"
+msgstr "Naturalidade"
+
+#: inhoro_shop/core/models.py:44 templates/core/natural_person.html:4
+#: templates/core/natural_person_list.html:4
+#: templates/core/natural_person_list.html:39
+msgid "Natural person"
+msgstr "Pessoa física"
+
+#: inhoro_shop/core/models.py:45
+msgid "Natural people"
+msgstr "Pessoas físícas"
+
+#: inhoro_shop/core/models.py:52
+msgid "Person"
+msgstr "Pessoa"
+
+#: inhoro_shop/core/models.py:56
+msgid "Street"
+msgstr "Rua"
+
+#: inhoro_shop/core/models.py:57
+msgid "City"
+msgstr "Cidade"
+
+#: inhoro_shop/core/models.py:58
+msgid "Number"
+msgstr "Número"
+
+#: inhoro_shop/core/models.py:59
+msgid "Complement"
+msgstr "Complemento"
+
+#: inhoro_shop/core/models.py:65
+msgid "Tags"
+msgstr "Rôtulo"
+
+#: templates/core/legal_person.html:13 templates/core/natural_person.html:14
+msgid "Edit person"
+msgstr "Editar pessoa"
+
+#: templates/core/legal_person.html:14 templates/core/natural_person.html:15
+msgid "Delete person"
+msgstr "Deletar pessoa"
+
+#: templates/core/legal_person_create.html:4
+msgid "Create Legal Person"
+msgstr "Criar pessoa jurídica"
+
+#: templates/core/legal_person_create.html:9
+#: templates/core/legal_person_update.html:9
+#: templates/core/natural_person_create.html:9
+#: templates/core/natural_person_update.html:9
+msgid "Save"
+msgstr "Salvar"
+
+#: templates/core/legal_person_delete.html:4
+msgid "Delete Legal Person"
+msgstr "Deletar pessoa jurídica"
+
+#: templates/core/legal_person_delete.html:10
+#: templates/core/natural_person_delete.html:10
+#, python-format
+msgid "Are you sure you want to delete \"%(name)s\"?"
+msgstr "Você tem certeza que quer deletar \"%(name)s\"?"
+
+#: templates/core/legal_person_delete.html:11
+#: templates/core/natural_person_delete.html:11
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: templates/core/legal_person_delete.html:12
+#: templates/core/natural_person_delete.html:12
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/core/legal_person_list.html:40
+#: templates/core/natural_person_list.html:40
+msgid "Add person"
+msgstr "Adicionar pessoa"
+
+#: templates/core/legal_person_update.html:4
+msgid "Update Legal Person"
+msgstr "Atualizar pessoa jurídica"
+
+#: templates/core/natural_person_create.html:4
+msgid "Create Natural Person"
+msgstr "Criar pessoa física"
+
+#: templates/core/natural_person_delete.html:4
+msgid "Delete Natural Person"
+msgstr "Deletar pessoa física"
+
+#: templates/core/natural_person_update.html:4
+msgid "Update Natural Person"
+msgstr "Atualizar pessoa física"
+
+#: templates/index.html:4
+msgid "Home"
+msgstr "Página inicial"
+
+#: templates/index.html:8
+msgid "Welcome to inhoro store!"
+msgstr "Bem vindo à loja do Inhoro!"
+
+#: templates/index.html:11
+msgid "Click here to access the natural people list"
+msgstr "Clique aqui para acessar a lista de pessoas físicas"
+
+#: templates/index.html:14
+msgid "List of natural person!"
+msgstr "Lista de pessoas físicas"
+
+#: templates/index.html:17
+msgid "Click here to access the legal people list"
+msgstr "Clique aqui para acessar a lista de pessoas jurídicas"
+
+#: templates/index.html:20
+msgid "List of legal person!"
+msgstr "Lista de pessoas jurídicas"
+
+#: templates/login.html:4
+msgid "Login"
+msgstr "Credenciamento"
+
+#: templates/login.html:9
+msgid "Sign in"
+msgstr "Conecte-se"

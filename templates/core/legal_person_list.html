@@ -1,0 +1,70 @@
+{% extends 'base_site.html' %}
+{% load i18n %}
+
+{% block html_title %}{% trans "Legal person" %}{% endblock %}
+
+{% block css %}
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+
+        button {
+            margin: 25px 10px 25px;
+            float: right;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 15px 10px auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% url 'core:legal_person_create' as create_url %}
+    <div>
+        <h1>{% trans "Legal person" %}</h1>
+        <button type="button" onclick="location.href='{{ create_url }}'; ">{% trans "Add person" %}</button>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>{% trans "Name" %}</th>
+                <th>{% trans "Document" %}</th>
+                <th>{% trans "Phone" %}</th>
+                <th>{% trans "Email" %}</th>
+            </tr>
+            {% for legal_person in legal_person_list %}
+                <tr>
+
+                    <td><a href="{% url 'core:legal_person' pk=legal_person.pk %}">{{ legal_person.name }}</a></td>
+                    <td>{{ legal_person.document }}</td>
+                    <td>{{ legal_person.phone }}</td>
+                    <td>{{ legal_person.email }}</td>
+
+                </tr>
+            {% empty %}
+                <tr>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                </tr>
+                <p>{% trans "Sorry, no legal person in the list." %}</p>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
